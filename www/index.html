@@ -26,21 +26,42 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <script src="js/frameworks/phaser.min.js"></script>
+        <script src="js/frameworks/jquery.js"></script>
+        <script src="js/home/Boot.js"></script>
+        <script src="js/home/Preloader.js"></script>
+        <script src="js/home/MainMenu.js"></script>
+        <script src="js/home/History.js"></script>
+        <script src="js/game/Game.js"></script>
+        <script src="js/game/player.js"></script>
+        <script src="js/game/stage.js"></script>
+        <script src="js/game/enemies.js"></script>
+        <script src="js/game/initGame.js"></script>
+        <script src="js/game/events.js"></script>
+        <script src="js/game/desicion.js"></script>
+        <style type="text/css">
+        @font-face {
+            font-family: "gecko";
+                src: url('css/Gecko_PersonalUseOnly.ttf') format("truetype");
+            }
+        </style>
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        <div id="game"></div>
+        <div id="orientation"></div>
+
         <script type="text/javascript">
-            app.initialize();
+            (function () {
+                var game = new Phaser.Game(1024, 768, Phaser.AUTO, 'game');
+                game.state.add('Boot', BasicGame.Boot);
+                game.state.add('Preloader', BasicGame.Preloader);
+                game.state.add('MainMenu', BasicGame.MainMenu);
+                game.state.add('Game', BasicGame.Game);
+                game.state.add('History', BasicGame.History);
+                game.state.start('Boot');
+            })();
         </script>
+        <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>
