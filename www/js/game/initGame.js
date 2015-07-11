@@ -1,12 +1,5 @@
 BasicGame.Game.prototype.addControlButtons = function(){
 	this.cursors    = this.input.keyboard.createCursorKeys();
-    this.jumpButton = this.add.button(0, this.world.height - 150 , 'playButton', this.playerJump, this);
-    this.slowButton = this.add.button(0, this.world.height - 150 , 'playButton', this.playerDecrease, this);
-    this.shotButton = this.add.button(0, this.world.height - 150 , 'playButton', this.playerDecrease, this);
-    this.ext1Button = this.add.button(0, this.world.height - 280 , 'playButton', this.playerDecrease, this);
-
-    this.jumpButton.height  = this.slowButton.height = this.shotButton.height    =  this.ext1Button.height = 100;
-    this.jumpButton.width   = this.slowButton.width =this.shotButton.width = this.ext1Button.width = 100;
 };
 
 BasicGame.Game.prototype.renderControls = function(){
@@ -18,11 +11,6 @@ BasicGame.Game.prototype.renderControls = function(){
 
     this.appleCount.x   = this.pig.x-200;
     this.appleText.x    = this.pig.x-150;
-
-    this.slowButton.x   = this.pig.x-150;
-    this.jumpButton.x   = this.pig.x+680;
-    this.shotButton.x   = this.pig.x+550;
-    this.ext1Button.x   = this.pig.x+680;
 };
 
 BasicGame.Game.prototype.resetVars = function(){
@@ -33,7 +21,7 @@ BasicGame.Game.prototype.resetVars = function(){
     this.plataformXPosition = 600;
     this.plataformChange    = 20;
     this.plataformHeight    = 50;
-    this.plataformWidth     = 200;
+    this.plataformWidth     = 153;
 
     this.lastPlatform       = 0;
     this.plataformCount     = 1;

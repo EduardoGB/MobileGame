@@ -1,67 +1,44 @@
-<!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
+<!DOCTYPE HTML>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <script src="js/frameworks/phaser.min.js"></script>
-        <script src="js/frameworks/jquery.js"></script>
-        <script src="js/home/Boot.js"></script>
-        <script src="js/home/Preloader.js"></script>
-        <script src="js/home/MainMenu.js"></script>
-        <script src="js/home/History.js"></script>
-        <script src="js/game/Game.js"></script>
-        <script src="js/game/player.js"></script>
-        <script src="js/game/stage.js"></script>
-        <script src="js/game/enemies.js"></script>
-        <script src="js/game/initGame.js"></script>
-        <script src="js/game/events.js"></script>
-        <script src="js/game/desicion.js"></script>
-        <style type="text/css">
-        @font-face {
-            font-family: "gecko";
-                src: url('css/Gecko_PersonalUseOnly.ttf') format("truetype");
-            }
-        </style>
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div id="game"></div>
-        <div id="orientation"></div>
+<head>
+    <title>perroQuino</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1, IE=9">
+    <meta name="viewport" content="initial-scale=1 maximum-scale=1 user-scalable=0 minimal-ui" />
+    <script src="js/frameworks/phaser.min.js"></script>
+    <script src="js/frameworks/jquery.js"></script>
+    <script src="js/home/Boot.js"></script>
+    <script src="js/home/Preloader.js"></script>
+    <script src="js/home/MainMenu.js"></script>
+    <script src="js/home/History.js"></script>
+    <script src="js/game/Game.js"></script>
+    <script src="js/game/player.js"></script>
+    <script src="js/game/stage.js"></script>
+    <script src="js/game/enemies.js"></script>
+    <script src="js/game/initGame.js"></script>
+    <script src="js/game/events.js"></script>
+    <script src="js/game/desicion.js"></script>
+    <style type="text/css">
+    @font-face {
+        font-family: "gecko";
+            src: url('css/Gecko_PersonalUseOnly.ttf') format("truetype");
+        }
+    </style>
+</head>
+<body style="margin: 0px;">
+    <div id="game"></div>
+    <div id="orientation"></div>
 
-        <script type="text/javascript">
-            (function () {
-                var game = new Phaser.Game(1024, 768, Phaser.AUTO, 'game');
-                game.state.add('Boot', BasicGame.Boot);
-                game.state.add('Preloader', BasicGame.Preloader);
-                game.state.add('MainMenu', BasicGame.MainMenu);
-                game.state.add('Game', BasicGame.Game);
-                game.state.add('History', BasicGame.History);
-                game.state.start('Boot');
-            })();
-        </script>
-        <script type="text/javascript" src="cordova.js"></script>
-    </body>
+    <script type="text/javascript">
+        (function () {
+            var game = new Phaser.Game(1024, 768, Phaser.AUTO, 'game');
+            game.state.add('Boot', BasicGame.Boot);
+            game.state.add('Preloader', BasicGame.Preloader);
+            game.state.add('MainMenu', BasicGame.MainMenu);
+            game.state.add('Game', BasicGame.Game);
+            game.state.add('History', BasicGame.History);
+            game.state.start('Boot');
+        })();
+    </script>
+</body>
 </html>
