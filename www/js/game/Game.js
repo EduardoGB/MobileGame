@@ -49,6 +49,8 @@ BasicGame.Game.prototype = {
         this.addTexts();
         this.addSounds();
         this.addControlButtons();
+
+        jQuery("#game").on( "swipe", this.swipeHandler );
     },
     
     /*update the game every second*/
@@ -83,5 +85,8 @@ BasicGame.Game.prototype = {
     quitGame: function () {
         this.music.stop();
         this.state.start('MainMenu');
+    },
+    swipeHandler: function(){
+        alert("sdds");
     }
 };
