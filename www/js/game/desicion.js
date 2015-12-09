@@ -4,13 +4,13 @@ BasicGame.Game.prototype.attackPig = function(){
 		// console.log(desicion);
 		switch(desicion){
 			case 'block':
-				this.addBlock(this.pig.x +4000,this.plataformYPosition-30);
+				//this.addBlock(this.pig.x +4000,this.plataformYPosition-30);
 				break;
 			case 'floor':
-				this.floorAttack = true;
+				//this.floorAttack = true;
 				break;
 			case 'red':
-        		this.addAttack();
+        		//this.addAttack();
 				break;
 			default:
 				break;
@@ -30,6 +30,22 @@ BasicGame.Game.prototype.selectAttack = function(){
 		return 'super';
 	} else {
 		return "nothing"
+	}
+
+};
+
+BasicGame.Game.prototype.selectPlatform = function(){
+	this.select = Math.round(Math.random() * 100);
+	if(this.select > 0 && this.select <= 25){
+		return -120;
+	} else if(this.select > 25 && this.select <= 50) {
+		return 120;
+	} else if(this.select > 50 && this.select <= 75) {
+		return -120;
+	} else if(this.select > 75 && this.select <= 100) {
+		return 120;
+	} else {
+		return -120;
 	}
 
 };
